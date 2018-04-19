@@ -6,6 +6,11 @@ export default interface INode<K,V> {
     getRight(): INode<K,V>;
     setLeft(left: INode<K,V>);
     setRight(right: INode<K,V>);
+    setParent(parent: INode<K,V>);
+    getParent(): INode<K,V>;
+    removeNode(subNode: INode<K,V>);
+    replaceNode(subNode: INode<K,V>, newSubNode: INode<K,V>);
+    isLeaf(): boolean;
 
-    compareByKeys(node: INode<K,V>);
+    compareKeys(key1: K, key2: K);
 }
