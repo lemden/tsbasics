@@ -1,4 +1,5 @@
-import BinaryMaxHeap, {Comparable} from "./BinaryMaxHeap";
+import BinaryMaxHeap from "./BinaryMaxHeap";
+import Comparable from "../../../common/interfaces/Comparable";
 
 export class HeapNode implements Comparable<number> {
     private value: number;
@@ -8,11 +9,11 @@ export class HeapNode implements Comparable<number> {
     public getValue(): number{
         return this.value;
     }
-    public more(node: Comparable<number>) {
-        return this.value > node.getValue();
+    public more(node: number) {
+        return this.value > node;
     }
-    public less(node: Comparable<number>) {
-        return this.value < node.getValue();
+    public less(node: number) {
+        return this.value < node;
     }
     public static fromArray(numbers: number[]): HeapNode[]{
         return numbers.map(n => new HeapNode(n));

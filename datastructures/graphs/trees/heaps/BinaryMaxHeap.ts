@@ -1,8 +1,4 @@
-export interface Comparable<T> {
-    more(c: Comparable<T>): boolean;
-    less(c: Comparable<T>): boolean;
-    getValue(): T;
-}
+import Comparable from "../../../common/interfaces/Comparable";
 
 export default
 class BinaryMaxHeap<V, T extends Comparable<V>> {
@@ -52,7 +48,7 @@ class BinaryMaxHeap<V, T extends Comparable<V>> {
         let currentIndex = i;
         while (currentIndex > 0) {
             const parentIndex =  Math.floor( (currentIndex - 1) / 2 );
-            if (this.list[parentIndex].less(this.list[currentIndex])) {
+            if (this.list[parentIndex].less(this.list[currentIndex].getValue())) {
                 this.swap(parentIndex, currentIndex);
             }
             currentIndex = parentIndex;
@@ -70,10 +66,10 @@ class BinaryMaxHeap<V, T extends Comparable<V>> {
             }
             let target = leftIndex;
             if (rightIndex < this.list.length 
-                    && this.list[rightIndex].more(this.list[leftIndex])) {
+                    && this.list[rightIndex].more(this.list[leftIndex].getValue())) {
                 target = rightIndex;
             }
-            if (this.list[currentIndex].less(this.list[target])) {
+            if (this.list[currentIndex].less(this.list[target].getValue())) {
                 this.swap(currentIndex, target);
                 currentIndex = target;
             } else {
