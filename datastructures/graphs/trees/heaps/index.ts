@@ -20,22 +20,21 @@ export class HeapNode implements Comparable<number> {
     }
 }
 
-// const heap1 = new BinaryMaxHeap<number, HeapNode>();
-// heap1.add(new HeapNode(100));
-// heap1.add(new HeapNode(200));
-// heap1.add(new HeapNode(300));
-// heap1.add(new HeapNode(50));
-// heap1.add(new HeapNode(75));
-// heap1.add(new HeapNode(95));
-// heap1.add(new HeapNode(195));
-// heap1.add(new HeapNode(1000));
-// heap1.add(new HeapNode(15));
-// heap1.add(new HeapNode(27));
+const heap1 = new BinaryMaxHeap<number, HeapNode>();
+heap1.add(new HeapNode(100));
+heap1.add(new HeapNode(200));
+heap1.add(new HeapNode(300));
+heap1.add(new HeapNode(50));
+heap1.add(new HeapNode(75));
+heap1.add(new HeapNode(95));
+heap1.add(new HeapNode(195));
+heap1.add(new HeapNode(1000));
+heap1.add(new HeapNode(15));
+heap1.add(new HeapNode(27));
 let next;
-// while ( next = heap1.next()) {
-//     console.log(next.getValue());
-// }
-// ----
+while ( next = heap1.next()) {
+    console.log(next.getValue());
+}
 
 // const heap2 = new BinaryMaxHeap<number, HeapNode>(
 //     HeapNode.fromArray([111, 20, 32, 500, 21, 1003, 1244, 5, 99, 13, 77])
@@ -44,13 +43,13 @@ let next;
 //     console.log(next.getValue());
 // }
 
-const heap31 = new BinaryMaxHeap<number, HeapNode>(
-    HeapNode.fromArray([111, 20, 32, 500, 21])
-);
-const heap32 = new BinaryMaxHeap<number, HeapNode>(
-    HeapNode.fromArray([1003, 1244, 5, 99, 13, 77])
-);
-heap31.append(heap32);
-while ( next = heap31.next()) {
-    console.log(next.getValue());
-}
+// const heap31 = new BinaryMaxHeap<number, HeapNode>(
+//     HeapNode.fromArray([111, 20, 32, 500, 21])
+// );
+// const heap32 = new BinaryMaxHeap<number, HeapNode>(
+//     HeapNode.fromArray([1003, 1244, 5, 99, 13, 77])
+// );
+// heap31.append(heap32);
+// while ( next = heap31.next()) {
+//     console.log(next.getValue());
+// }
